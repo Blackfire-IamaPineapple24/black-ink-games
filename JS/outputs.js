@@ -24,7 +24,7 @@ const commands = {
     exit: "Cannot exit: Please close the remote session window/tab.",
     y: "Yes to what? Cannot find operation, cancelling.",
     n: "No to what? Cannot find operation, cancelling.",
-    "access file totally_secret_game_info.txt": "Hey, if you somehow only found me through this website\nand you're interested in the game, check out my website at\nhttps://black-ink-games.carrd.co/# for a link\nto my gamejolt and my other projects!",
+    "access file totally_secret_game_info.txt": "Hey, if you somehow only found me through this website\nand you're interested in the game, check out my website at\nhttps://black-ink-games.blackfire.interactive.website/ for a link\nto my gamejolt and my other projects!",
     "cmd": function() {
       output.innerHTML += `Opening a new command window.`;
     
@@ -39,7 +39,7 @@ const commands = {
 };
 
 function processCommand(userInput) {
-    output.innerHTML += `Local$User> ${userInput}<br>`;
+    output.innerHTML += `Remote$User> ${userInput}<br>`;
 
     if (commands[userInput]) {
       if (typeof commands[userInput] === 'function') {
