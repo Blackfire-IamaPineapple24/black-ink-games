@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrot's Diner!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        #content {
+            width: 900px;
+            background-color: #e0e0e0;
+            padding-bottom: 20px; /* only bottom padding */
+            box-sizing: border-box;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #banner {
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 100px;
+            background: linear-gradient(to bottom, #ffa600, #ad5f00);
+            border-bottom: 3px solid black;
+            margin: 0 0 20px 0;
+        }
+
+        #main {
+            padding: 0 30px; /* horizontal padding only */
+            flex: 1; /* pushes footer to the bottom */
+        }
+
+        #footer {
+            background-color: #d0d0d0;
+            margin-top: 40px;
+            padding: 10px;
+            font-size: 14px;
+            text-align: left;
+            border-top: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="banner">
+            Carrot's Diner!
+        </div>
+
+        <div id="main">
+            <h1> Menu </h1>
+            <p> Here you'll find our menu along with prices for each item.  </p>
+            <h3> Burgers </h3>
+            <p> Burger ------------------------------- £2.90 </br>
+                Double Patty Burger ------------------ £3.90 </br>
+                Bacon Burger ------------------------- £1.85 </p>
+            <h3> Chicken </h3>
+            <p> Crispy Chicken Sandwich -------------- £3.00 </br>
+                Grilled Chicken Sandwich ------------- £2.50 </br>
+                Chicken Bites ------------------------ £1.00 </p>
+            <h3> Sides </h3>
+            <p> Fries Fries Fries Fries Fries Fries Fries Fries Fries Fries Fries Fries Fries Fries </p>frie f
+        </div>
+
+        <div id="footer">
+            © 2016 Carrot's Diner. All rights reserved. <a href="main.html"> Home </a> <a href="devlog.html"> Devlog </a> <a href="/OtherPages/projects.html"> Back </a>
+        </div>
+    </div>
+</body>
+</html>
