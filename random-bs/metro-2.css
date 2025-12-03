@@ -1,0 +1,224 @@
+/*
+ ________  ________  ________  ___  __    ________  ___       ___  ___  ________
+|\   ___ \|\   __  \|\   __  \|\  \|\  \ |\   __  \|\  \     |\  \|\  \|\   ____\
+\ \  \_|\ \ \  \|\  \ \  \|\  \ \  \/  /|\ \  \|\  \ \  \    \ \  \\\  \ \  \___|_
+ \ \  \ \\ \ \   __  \ \   _  _\ \   ___  \ \   ____\ \  \    \ \  \\\  \ \_____  \
+  \ \  \_\\ \ \  \ \  \ \  \\  \\ \  \\ \  \ \  \___|\ \  \____\ \  \\\  \|____|\  \
+   \ \_______\ \__\ \__\ \__\\ _\\ \__\\ \__\ \__\    \ \_______\ \_______\____\_\  \
+    \|_______|\|__|\|__|\|__|\|__|\|__| \|__|\|__|     \|_______|\|_______|\_________\
+                                                                          \|_________|
+
+ ________      ___    ___      ________  _______   ___      ___ _______   ___      ___ ___  ___
+|\   __  \    |\  \  /  /|    |\   ___ \|\  ___ \ |\  \    /  /|\  ___ \ |\  \    /  /|\  \|\  \
+\ \  \|\ /_   \ \  \/  / /    \ \  \_|\ \ \   __/|\ \  \  /  / | \   __/|\ \  \  /  / | \  \ \  \
+ \ \   __  \   \ \    / /      \ \  \ \\ \ \  \_|/_\ \  \/  / / \ \  \_|/_\ \  \/  / / \ \  \ \  \
+  \ \  \|\  \   \/  /  /        \ \  \_\\ \ \  \_|\ \ \    / /   \ \  \_|\ \ \    / /   \ \  \ \  \____
+   \ \_______\__/  / /           \ \_______\ \_______\ \__/ /     \ \_______\ \__/ /     \ \__\ \_______\
+    \|_______|\___/ /             \|_______|\|_______|\|__|/       \|_______|\|__|/       \|__|\|_______|
+             \|___|/
+*/
+
+:root {
+  --darkplus-bg: #1f1f1f; /* Dark background, slightly different from black */
+  --darkplus-bg2: #2d2d30; /* Secondary dark background, flat */
+  --darkplus-sec: #0078D7; /* Windows Metro Blue Accent Color */
+  --darkplus-links: #0099FF; /* Slightly brighter blue for links/secondary accents */
+  --darkplus-home-icon: url(https://i.imgur.com/RvlNQ7k.png); /* Keep if preferred, but usually replaced in Metro */
+  --watermark-filter-invert: 0%;
+  --watermark-filter-sepia: 50%;
+  --watermark-filter-saturate: 3000%;
+  --watermark-filter-hue-rotate: 195deg; /* Adjusted for blue */
+  --watermark-filter-brightness: 70%;
+  --watermark-filter-contrast: 200%;
+}
+
+/* --- Base Backgrounds and Structure: Flat Colors --- */
+.bg__960e4, .container_a2f514, .scrollerInner__36d07,
+.container__9293f.themed__9293f, .content-2a4AW9, .sidebarRegion__23e6b,
+.scroller__99e7c.thin__99f8c.scrollerBase-_bVAAt.fade-1R6FHN, .panel__5dec7.activityPanel_c48ade,
+.container__37e49, .form_f75fb0, .scroller__36d07, .peopleList__5ec2f.auto-2K3UW5.scrollerBase-_bVAAt,
+.customStatusActivity-WKWGD-, .nameTagWithCustomStatus-5c-v3-.nameTag-2Nlmsy.nameTag__05e81,
+.member_c8ffbb, .sidebarRegionScroller__23e6b, .contentRegion__23e6b,
+.layer__960e4, .scroller__4a84a, .scroller_fb04e1, .theme-dark .uploadModal_dbca3c,
+.theme-dark .footer_dbca3c, .members_c8ffbb, .panels_c48ade, .container_f369db,
+.footer__214dc, .container_c48ade, .visual-refresh .sidebar_c48ade:after,
+.content_f75fb0, .scroller-1jBQYo, .infoScroller-3MqKC5, .listScroller-XCVa1H,
+.container__2637a, .container__34c2c, .theme-dark .scroller__99e7c, .container_faa96b {
+  background-color: var(--darkplus-bg) !important;
+  border-radius: 0 !important; /* Metro UI is flat, no rounded corners */
+}
+
+.searchBar__35e86 .searchBarComponent__35e86, .form_f75fb0 .channelTextArea_f75fb0 .scrollableContainer__74017,
+.background__1fed1, .grid__623de, .wrapper-1cBijl, .input_ac6cb0, .container-36u7Lw,
+.theme-dark .tab-2j5AEF.selected-2LAck8, .messages__1ccd1, .channelHeader__35a7e,
+.secondary__45d4f, .messageContainer__95796, .message__02a39, .card-1SdQ2-,
+.radioBar-3w9XY-, .cozy_fc8177.wrapper_fc8177, .expandedFolderBackground-1cujaW,
+.wrapper__83b1d, .theme-dark .tierBody_f15dca, .theme-dark .message__89466,
+.bottomInformationTextContainer_d4ced7, .stickerResults_d4ced7, .menu_c1e9c4,
+.inner_c0bea0, .container__0f2e8.openOnHover__0f2e8 {
+  background-color: var(--darkplus-bg2) !important;
+  border-radius: 0 !important; /* Secondary background, also flat */
+}
+
+/* --- Accent Color and Text/Icon Coloring --- */
+.form_f75fb0 .channelTextArea_f75fb0 .textArea__74017 .placeholder__443e5,
+.membersGroup_c8ffbb, .wrapper__00943 .section__00943, .header_f37cb1,
+.mention__3b95d, .iconBadge__9293f, .contents-3ca1mk path,
+.button_f7ecac path, .item-1OdjEX path, .iconWrapper__9293f path,
+.linkButtonIcon__972a0 path, .actionButton_f8fa06 path, .buttonIcon_e131a9 path,
+.icon_fea832 path, .actionIcon_c69b6d path, .wrapper__2ea32 .wrapper__2ea32 .mainContent-20q_Hp .icon__2ea32,
+.metadataIcon_f316dd path, .controlIcon_f316dd path, .data-slate-string path,
+.winButton__421ed, .VoiceChatNotifications-button-icon,
+.colorHeaderPrimary-jN_yGr, .headerCellContent__5fe04, .nameCellText_adb41f,
+.anchor-1MIwyf, .name__91a9d, .title__9293f, .children__91a9d, .headerText__99e7c,
+.clickable__9293f .icon__9293f, .item__133bf.item-3XjbnG.themed-2-lozF,
+.header-2Kx1US, .theme-dark .foreground-2hyALB, .theme-dark .bd-social-logo path,
+.defaultColor-2cKwKo, .menu_c8834f, .theme-dark .lookLink-15mFoz.colorPrimary-2AuQVo,
+.title-2dsDLn, .arrow_d64d50.icon__29444, .downloadButton__3fb6d, .avatar__91a9d,
+.base-21yXnu, .guildName_e90879, .size14-3fJ-ot, .filename_dbca3c, .label_dbca3c,
+.button__67645, .activeButtonChild_aa63ab, .additionalActionsIcon-3Cy8UU,
+.label-2gNW3x, .icon__2ea32, .channelName-3KPsGw, .subtitle__2ea32, .navButton__08434,
+.colorStandard-21JIj7, .unicodeShortcut_b9ee0c, .categoryIcon_b9ee0c, .header__14245,
+.username__05e81, .discriminator__1fed1, .headerTagDiscriminatorNoNickname-dfcvHa,
+.title__1472a, .linkButtonIcon__972a0, .username__0a06e, .text__19b6d,
+.discriminator__0a06e, .title_d1da5f, .hovered__0263c, .customStatus__37e49,
+.button__24af7, .attachButtonPlus__0923f, .item-1OdjEX, .icon_c9d15c,
+.userTagDiscriminatorNoNickname-2HLaIE, .usernameContainer__22048, .activityText__5d473,
+.activity-icon, .icon__9293f, .title__9293f, .icon_a45028, .button__201d5 .contents__201d5,
+.icon__29444, .name__29444, .headerContent_f37cb1 .name_f37cb1, .controlIcon_f1ceac,
+button.button__67645 .lottieIcon__5eb9b svg path, .title_c38106 .defaultColor_b717a1,
+.visual-refresh .themed_b3f026.item_b3f026, .nameTag__37e49  .title_b6c092,
+.nameTag__37e49 .subtext__339d0, .menu_c1e9c4 .label_c1e9c4,
+.menu_c1e9c4 .iconContainer_c1e9c4 svg, .winButtons_c38106, .title__85643 svg path,
+.username_c19a55, .userTagUsername__63ed3, .pronounsText__63ed3, .tagText__10651,
+.visual-refresh .cozy_c19a55 .timestamp_c19a55, .user-profile-popout .nickname__63ed3,
+.user-profile-sidebar .nickname__63ed3, .userTagDiscriminator__63ed3,
+.overlay_c0bea0 .header__1f6ca svg path, .lottieIconColors__5eb9b :not(defs *)[stroke][stroke-opacity] {
+  color: var(--darkplus-sec) !important;
+  fill: var(--darkplus-sec) !important;
+}
+
+/* Metro Blue Background/Fill/Active */
+.wrapper__00943, .mention__3b95d, .mentioned__5126c:before, .progressBar-1T6LYX,
+.mediaBarWrapper_f7877e .mediaBarGrabber_f7877e, .mediaBarProgress_f7877e,
+.mediaBarProgress_f7877e::after, .mediaBarProgress_f7877e::before,
+.theme-dark .lookFilled-yCfaCM.colorPrimary-2AuQVo, .wrapper__8436d.selected_ae80f7 .childWrapper_a6ce15,
+.wrapper__8436d:hover .childWrapper_a6ce15, #bd-pub-button, .iconBadge-3qSJIw,
+.jumpToPresentBar__0f481, .numberBadge__40d6f, .item__58105,
+.newMessagesBar__0f481, .unreadPill__908e2, .unreadPillCapStroke__908e2,
+.iconBadge-3qSJIw.participating-1NvRVd, .botTagRegular_c89c9a,
+.wrapper_f7ecac, .numberBadge__2b1f5, .mentionsBar__7aaec, .sprite__04eed.spriteGreyscale__04eed.active__04eed,
+.colorable_f1ceac.primaryDark_f1ceac, .colorable_f1ceac.primaryDark_f1ceac .centerIcon_f1ceac,
+.dotSpacer__63ed3, .botTagRegular__82f07, .wrapper__00943.active_bf1984,
+.wrapper__00943:hover, .lookFilled-yCfaCM.colorBrand-I6CyqQ {
+  background-color: var(--darkplus-sec) !important;
+  border-color: var(--darkplus-sec) !important;
+}
+
+/* Special High Contrast/Selected Text for Metro Blue Backgrounds */
+.wrapper__00943 .inset_bf1984, .barButtonBase__0f481, .text-PdAsFQ, .colorStandard-21JIj7,
+.colorable_f1ceac.primaryDark_f1ceac, .colorable_f1ceac.primaryDark_f1ceac .centerIcon_f1ceac,
+.botTagRegular_c89c9a, .botTagRegular__82f07 {
+  color: var(--darkplus-bg) !important; /* Text on accent color should be dark/background color */
+}
+
+/* --- Flat Hover/Active States --- */
+/* Top Tabs/Buttons - Active gets accent border */
+.top-K_jibn .selected-g-kMVV.themed-2-lozF.item-3XjbnG,
+.top-K_jibn .themed-2-lozF.item-3XjbnG:active,
+.top-K_jibn .themed-2-lozF.item-3XjbnG:hover {
+  border-bottom: 2px solid var(--darkplus-sec);
+  color: var(--darkplus-sec);
+  background: transparent;
+}
+
+/* Sidebar Channel/Item Hover/Active */
+.wrapper__2ea32.modeSelected__2ea32,
+.wrapper__2ea32:hover:not(.modeSelected__2ea32):not(.modeMuted__2ea32) {
+  background-color: var(--darkplus-bg2) !important;
+}
+
+.modeUnreadImportant__2ea32 .icon__2ea32, .modeUnreadImportant__2ea32 .name__2ea32,
+.modeSelected__2ea32 .icon__2ea32, .modeSelected__2ea32:hover .icon__2ea32,
+.modeUnreadImportant__2ea32 .icon__2ea32, .modeUnreadImportant__2ea32:hover .icon__2ea32,
+.modeConnected__2ea32 .name__2ea32, .modeConnected__2ea32:hover .name__2ea32,
+.modeSelected__2ea32 .name__2ea32, .modeSelected__2ea32:hover .name__2ea32,
+.modeUnreadImportant__2ea32 .name__2ea32, .modeUnreadImportant__2ea32:hover .name__2ea32,
+.navButton__08434:hover, .clickable__9293f:hover .icon__9293f:hover,
+.clickable__9293f .icon__9293f, .unicodeShortcut_b9ee0c:hover {
+  color: var(--darkplus-sec) !important; /* Active/Unread is the primary accent */
+}
+
+/* User Hover/Active */
+.interactive_bf202d .highlighted__20a53 {
+  background-color: var(--darkplus-sec);
+  opacity: 0.5; /* Subtle background highlight on hover */
+}
+
+/* Input Fields/Buttons (General) */
+.searchBar__35e86 .searchBarComponent__35e86, .input__48d49, .medium__5b9a9.iconLayout__67261 {
+  border-radius: 0;
+}
+
+.theme-dark .lookOutlined-3yKVGo.colorPrimary-2AuQVo {
+  border-radius: 0; /* Flat buttons */
+}
+
+/* Remove image filter/shadows for flat design */
+.avatar_c19a55.clickable_c19a55 {
+  filter: none;
+  color: var(--darkplus-sec);
+}
+.avatar_c19a55:hover.clickable_c19a55:hover {
+  filter: none;
+  transform: scale(1.05); /* Subtle scale for hover */
+  transition: transform 0.2s ease;
+}
+
+/* Remove chat bubble effect */
+.contents_c19a55 .messageContent_c19a55, .container_b7e1cb {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0;
+}
+
+/* Metro-style Scrollbar - Thinner and accent color */
+::-webkit-scrollbar-thumb {
+  background-color: var(--darkplus-sec) !important;
+  border-radius: 0 !important; /* Flat scrollbar */
+}
+
+/* Metro-style Select/Highlight */
+::selection {
+  background-color: var(--darkplus-sec);
+  color: var(--darkplus-bg);
+}
+
+.topPill-3DJJNV .themed-2-lozF.selected-g-kMVV.item-3XjbnG,
+.side-2ur1Qk .themed-2-lozF.selected-g-kMVV.item-3XjbnG,
+.theme-dark .activeButton-LRWFC_,
+.theme-dark .activeButton-LRWFC_:hover {
+    background: var(--darkplus-sec);
+    color: var(--darkplus-bg);
+    border-radius: 0;
+}
+
+.circleIconButton__5bc7e:hover {
+  background: var(--darkplus-sec) !important;
+  color: var(--darkplus-bg) !important;
+}
+
+/* Remove chat input bar pseudo-element shadow */
+.content_f75fb0:before {
+  box-shadow: none !important;
+}
+
+/* Remove button rounded corners */
+.theme-dark .lookFilled-yCfaCM.colorGrey-2iAG-B,
+.lookFilled-yCfaCM.colorBrand-I6CyqQ {
+  border-radius: 0 !important;
+}
+
+.theme-dark .lookFilled-yCfaCM.colorGrey-2iAG-B:hover {
+  background-color: var(--darkplus-links) !important;
+}
