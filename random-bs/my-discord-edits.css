@@ -22,7 +22,7 @@
 :root {
   --darkplus-bg: #000000;
   --darkplus-bg2: #000000;
-  --darkplus-sec: #0057bb;
+  --darkplus-sec: #ffffff;
   --darkplus-links: #0077ff;
   --darkplus-home-icon: url(https://black-ink-games.blackfire-interactive.website/random-bs/home-icon.png);
   --watermark-filter-invert: 0%;
@@ -31,6 +31,11 @@
   --watermark-filter-hue-rotate: 210deg;
   --watermark-filter-brightness: 70%;
   --watermark-filter-contrast: 200%;
+}
+
+/* Hides the "Discord" or "Direct Messages" text in the main title bar */
+.toolbar_f37cb1 .name_f37cb1 {
+    display: none;
 }
 
 .bg__960e4,
@@ -1742,13 +1747,4 @@ button.button__67645 .lottieIcon__5eb9b svg path {
 ::selection {
   background-color: var(--darkplus-bg);
   color: var(--darkplus-links);
-}
-
-.title_c38106:after {
-    content: "Discord" !important;
-    content: url() !important;
-
-    color: var(--header-primary) !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
 }
