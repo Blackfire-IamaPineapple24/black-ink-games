@@ -1,102 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Do we need to call MatPat again? This is so meta. -->
         <meta charset="UTF-8">
-        <title> Black Ink Games </title>
-        <link rel="icon" type="image/x-icon" href="/Images/Favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/Resources/Images/Favicon.ico">
+        <title>Home</title>
+
+        <!-- CSS Styles -->
         <style>
-            body {
-                margin: 0;
-                padding: 0;
-                background-Color: #000000;
-                display: flex;
-                justify-content: left;
-                font-family: 'Courier New', Courier, monospace;
-            }
-
-            html, body {
-                height: 100%;
-            }
-
-            #banner {
-                width: 100vw;
-                padding: 40px 0;
-                padding-left: 40px;
-                text-align: left;
-                background: linear-gradient(to right, 
-                    #000000 0%, 
-                    #000000 20%, 
-                    #030505 30%, 
-                    #0f1618 40%, 
-                    #26383d 50%, 
-                    #4a6972 55%, 
-                    #658c99 60%, 
-                    #6e9daa 65%, 
-                    #7cb0be 70%, 
-                    #9bdaeb 100%);
-                margin: 0 0 20px 0;
-                color: #ffffff;
-                box-sizing: border-box;
-                border-bottom: 3px solid #ffffff;
-            }
-
-            #main {
-                color: #ffffff;
-                padding-left: 40px;
-                
-            }
-
-            @keyframes fadeColour {
-                from {
-                    border: 2px solid #ffffff;
-                    color: #ffffff;
-                }
-                to {
-                    border: 2px solid #9bdaeb;
-                    color: #9bdaeb;
-                }
+/* #region HEAD -- */
+            *, html, body
+            {
+                scrollbar-width: none;
             }
             
-            .button {
-                background-color: #000000;
-                color: #ffffff;
-                border: 2px solid #ffffff;
-                padding: 15px 32px;
-                text-align: center;
+            html
+            {
+                scrollbar-width: none !important;
+                overflow-y: scroll;
+                overflow: -moz-scrollbars-none;
+            }
+
+            /* Define the font and the background. */
+            body
+            {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+                font-family: 'Segoe UI', sans-serif;
+                color: rgba(255, 255, 255, 1);
+                background-color: rgba(0, 0, 0, 0);
+                background-image: url("/Resources/Images/wallpaper.jpg");
+                background-size: cover;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none;
+            }
+            body::-webkit-scrollbar
+            {
+                display: none !important;
+            }
+
+            /* Acrylic blur */
+            .nav-panel
+            {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 320px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.65);
+                backdrop-filter: blur(20px);
+                background-image: radial-gradient(rgba(0, 0, 0, 0.1) 3px, transparent 3px);
+                background-size: 0.2px 0.2px;
+                z-index: 0;
+            }
+
+            /* Big black bit that the actual page goes on */
+            .content-panel
+            {
+                position: relative;
+                margin-left: 320px;
+                width: calc(100% - 320px);
+                min-height: 100vh;
+                background: rgba(0, 0, 0, 1);
+                z-index: 1;
+                overflow-x: hidden;
+            }
+
+            /* If you're using a browser that doesn't support display:grid, you get told to screw off because i haven't made the raw HTML version yet. */
+            @supports (display:grid)
+            {
+                .no-support
+                {
+                    display: none !important;
+                }
+            }
+
+            .window-title
+            {
+                position: sticky;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                margin-left: 10px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+
+            .nav-hamburger
+            {
+                display: none;
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+
+/* #region CONTENT -- */
+            /* Little style stuff for the no-support text, because Internet Explorer still supports a lot of CSS. */
+            .no-support
+            {
+                top: 35px;
+                left: 20px;
+                display: block;
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Page content. */
+            .content
+            {
+                max-width: calc(100% - 40px);
+                top: 35px;
+                left: 20px;
+                display: block;
+                position: relative;
+                z-index: 2;
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+
+/* #region SIDEBAR CONTENT -- */
+            .sidebar-content
+            {
+                top: 35px;
+                right: 20px;
+                width: fit-content;
+                display: block;
+                position: fixed;
+                z-index: 2;
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+
+/* #region ELEMENTS -- */
+            img
+            {
+                user-select: none;
+                pointer-events: none;
+            }
+
+            h1
+            {
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 300;
+                font-size: 22pt;
+                user-select: none;
+            }
+
+            h2
+            {
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 630;
+                font-size: 22pt;
+                user-select: none;
+            }
+
+            h3
+            {
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 400;
+                font-size: 13pt;
+                user-select: none;
+
+            }
+
+            p
+            {
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 300;
+                font-size: 11pt;
+                user-select: none;
+            }
+
+            a
+            {
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 300;
+                font-size: 11pt;
+                user-select: none;
+                color: rgba(0, 120, 215, 1);
                 text-decoration: none;
+                -webkit-user-drag: none;
+            }
+            a:hover
+            {
+                color: rgba(153, 153, 153, 1);
+            }
+
+            .grey-p
+            {
+                margin: 0;
+                color: rgba(153, 153, 153, 1);
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+            
+/* #region BUTTONS AND BUTTON ANIMATIONS -- */
+            .button
+            {
+                position: relative;
                 display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
+                padding: 12px 24px;
+                width: 100%;
+                height: 20px;
+                background: rgba(0, 0, 0, 0);
+                color: rgba(255, 255, 255, 1);
+                border: none;
+                box-shadow: none;
+                text-align: left center;
+                cursor: default !important;
+                overflow: hidden;
+                user-select: none;
+
+                --light-x: 50%;
+                --light-y: 50%;
+                --light-opacity: 0;
+
+                transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), --light-opacity 0.2s ease;
             }
-            .button:hover {
-                animation-name: fadeColour;
-                animation-duration: 0.15s;
-                animation-iteration-count: 1;
-                border: 2px solid #9bdaeb;
-                color: #9bdaeb;
+            .button:hover
+            {
+                color: rgba(255, 255, 255, 1);
+                background: rgba(255, 255, 255, 0.05);
+                box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.05), inset 0 -2px 0 0 rgba(255, 255, 255, 0.05);
             }
-        </style>
+            .button::after
+            {
+                content: '';
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                background: radial-gradient(circle 80px at var(--light-x) var(--light-y), rgba(255, 255, 255, var(--light-opacity)), transparent 90%);
+                transition: background 0.05s;
+            }
+            @keyframes clickPress 
+            {
+                0% {transform: scale(1);}
+                0.00001% {transform: scale(0.92);}
+                100% {transform: scale(1);}
+            }
+            .click-animate
+            {
+                animation: clickPress 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .button.selectedpage
+            {
+                position: relative;
+            }
+            .button.selectedpage::before
+            {
+                content: '';
+                position: absolute;
+                top: 5px;
+                bottom: 5px;
+                left: 0;
+                width: 3px;
+                background-color: rgba(0, 120, 215, 1);
+                transition: width 0.5s ease-out;
+            }
+            .button.selectedpage.animate::before
+            {
+                width: 5px;
+            }
+
+            .button.button2
+            {
+                background-color: rgba(35, 35, 35, 1);
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                align-items: center;
+                padding: 0;
+                font-size: large;
+            }
+            .button.button2:hover
+            {
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+
+/* #region THIN VERSION FOR SMALL SCREENS -------------------------------------- */
+            @media (max-width: 870px)
+            {
+                .sidebar-content
+                {
+                    position: relative;
+                    width: 100%;
+                    right: auto;
+                    top: auto;
+                    height: auto;
+                    margin-left: 20px;
+                    margin-top: 50px;
+                }
+
+                .nav-panel
+                {
+                    display: none;
+                    width: 100%;
+                    z-index: 3;
+                    opacity: 1;
+                    transition: opacity 0.4s ease;
+                }
+                .nav-panel.open
+                {
+                    display: block;
+                    opacity: 1;
+                }
+                .nav-panel.closing
+                {
+                    opacity: 0;
+                }
+
+                .nav-panel .button
+                {
+                    transform: translateY(-20px);
+                    opacity: 0;
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                }
+
+                .nav-panel.open .button
+                {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+
+                .content-panel
+                {
+                    margin: 0;
+                    width: 100% !important;
+                }
+
+                .window-title
+                {
+                    display: none;
+                }
+
+                .nav-hamburger
+                {
+                    display: block;
+                }
+
+                body
+                {
+                    background-image: none;
+                }
+
+/* #region NAVBAR BUTTON SLIDE-IN */
+                .nav-panel.open .button:nth-child(1) {transition-delay: 0.05s;}
+                .nav-panel.open .button:nth-child(2) {transition-delay: 0.10s;}
+                .nav-panel.open .button:nth-child(3) {transition-delay: 0.15s;}
+                .nav-panel.open .button:nth-child(4) {transition-delay: 0.20s;}
+                .nav-panel.open .button:nth-child(5) {transition-delay: 0.25s;}
+                .nav-panel.open .button:nth-child(6) {transition-delay: 0.30s;}
+                .nav-panel.open .button:nth-child(7) {transition-delay: 0.35s;}
+            }
+</style>
     </head>
     <body>
-        <div id="content">
-            <div id="banner">
-                
-                <h1> <img src="Images/BIGCircleTrans.png" height="100"> </h1>
-                <h1> Black Ink Games </h1>
-                <h3>
-                    <button class="button" onclick="document.location='/'"> Home </button>
-                    <button class="button" onclick="document.location='/OtherPages/gamejolt.html'"> GameJolt </button>
-                    <button class="button" onclick="document.location='/OtherPages/itch.html'"> Itch.io </button>
-                    <button class="button" onclick="document.location='/OtherPages/projects.html'"> Current Projects </button>
-                    <button class="button" onclick="document.location='/OtherPages/contact.html'"> Social </button>
-                    <button class="button" onclick="document.location='/OtherPages/bfi.html'"> Blackfire Interactive </button>
-                </h3>
-            </div>
-            <div id="main">
-                <h3> Indie game development in Unity 6. </h3>
-                <p> </br> This website is much more primitive than my old one and I will improve it over time but I'm not too good at HTML so it'll be a while :P </br> (I'll be starting a college course in web design soon) </p>
+        <!-- Navigation Panel, contains tabs for parts of the site. -->
+        <div class="nav-panel">
+            <!-- Navbar content -->
+            <div class="nav-content">
+                <div class="window-title">
+                    <img src="/Resources/Images/BIGCircleTrans.png" width="15px" style="margin-right: 10px; font-size: 12pt; line-height: 1;">
+                    <p style="margin: 0;"> Black Ink Games </p> <!-- "Window Title" -->
+                </div> 
+
+                <!-- Buttons -->
+                <div>
+                    <a class="button selectedpage" href="/"> Home </a>
+                    <br>
+                    <a class="button" href="/Gamejolt/"> GameJolt </a>
+                    <br>
+                    <a class="button" href="/itch/"> itch.io </a>
+                    <br>
+                    <a class="button" href="/Projects/"> Projects </a>
+                    <br>
+                    <a class="button" href="/Social/"> Social </a>
+                    <br>
+                    <a class="button" href="/Blackfire-Interactive/"> Blackfire Interactive </a>
+                    <br>
+                    <a class="button"> Test button that does nothing </a>
+                </div>
+
+                <div id="back" style="align-self: bottom; display: none;">
+                    <a class="button" onclick="closeNav()"> Back </a>
+                </div>
             </div>
         </div>
+        
+        <div class="content-panel">
+            <!-- This is the button for the navigation menu on small screens. -->
+            <div class="nav-hamburger">
+                <button class="button button2" style="width: 45px; height: 45px; margin-bottom: 0; font-family: 'Segoe MDL2 Assets'" onclick="openNav()"></button>
+            </div>
+
+            <!-- What are you doing on IE11 you psycho?? -->
+            <div class="no-support">
+                <h1> Using an archaic browser? You're out of luck but there will be a compatibility version of the site eventually. </h1>
+            </div>
+
+            <!-- Page content (The important bit!) -->
+            <div class="content">
+                <h1> Home </h1>
+                <img src="/Resources/Images/BIGCircleTrans.png" width="200px">
+                <h2 style="margin-bottom: 0;"> BLACK INK GAMES </h2>
+                <p class="grey-p"> jack@blackfire-interactive.website </p>
+                <p class="grey-p"> Developer </p>
+                <p> This website is much more primitive than my old one and I will improve it over time but I'm not too good at HTML so it'll be a while :P
+                <br>(I'll be starting a college course in web design soon) </p>
+            </div>
+
+            <!-- The sidebar. -->
+            <div class="sidebar-content">
+                <!-- Relaed Settings (Links to Windows Settings) -->
+                <h3 style="margin-bottom: 10px;"> Related Settings </h3>
+                <a href="ms-settings:emailandaccounts"> Add or edit third-party accounts on <br> Windows </a>
+                <br style="margin-bottom: 13px;">
+                <a href="ms-settings:yourinfo"> View your account info on Windows </a>
+                <br style="margin-bottom: 15px;">
+
+                <!-- Help from the web (Just some fun links) -->
+                <h3 style="margin-bottom: 10px"> Help from the web </h3>
+                <a href="https://www.codecademy.com/article/local-web-page"> Creating a simple HTML page </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://github.com/"> Making use of open-source software </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://wamwoowam.co.uk/"> Viewing the site that gave me the idea <br> for this </a>
+                <br style="margin-bottom: 5px;">
+                <a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);"> Destroying webpages with Kickassapp </a>
+                <br style="margin-bottom: 5px;">
+                <a href="http://localhost:8000/"> Test link that does nothing </a>
+                <br style="margin-bottom: 18px;">
+
+                <!-- Give Feedback (Opens Github Issues) -->
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <p style="font-family: 'Segoe MDL2 Assets', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
+                    <a href="https://github.com/Blackfire-IamaPineapple24/black-ink-games/issues/new"> Give Feedback </a>
+                </div>
+
+                <br style="margin-bottom: 15px;">
+            </div>
+        </div>
+
+        <script>
+            const buttons = document.querySelectorAll('.button');
+            const currentButton = document.querySelector('.selectedpage');
+            const navMenu = document.querySelector('.nav-panel');
+            const backButton = document.getElementById('back');
+            
+            // Tracks the mouse and sets a radial gradient on the mouse's position for all elements with the .button CSS class.
+            document.addEventListener('mousemove', (e) =>
+            {
+                buttons.forEach(button =>
+                {
+                    const rect = button.getBoundingClientRect();
+                    const xPer = ((e.clientX - rect.left) / rect.width * 100);
+                    const yPer = ((e.clientY - rect.top) / rect.height * 100);
+    
+                    button.style.setProperty('--light-x', `${xPer}%`);
+                    button.style.setProperty('--light-y', `${yPer}%`);
+                    button.style.setProperty('--light-opacity', 0.08);
+                });
+            });
+
+            buttons.forEach(button =>
+            {
+                button.addEventListener('mousedown', () =>
+                {
+                    button.classList.remove('click-animate');
+                    void button.offsetWidth;
+                    button.classList.add('click-animate');
+                });
+            });
+
+            window.addEventListener('DOMContentLoaded', () =>
+            {
+                const selectedButton = document.querySelector('.button.selectedpage');
+                selectedButton.classList.add('animate');
+            })
+
+            function openNav()
+            {
+                navMenu.classList.remove('closing');
+                navMenu.classList.add('open');
+                backButton.style.display = 'block';
+            }
+            function closeNav()
+            {
+                navMenu.classList.add('closing');
+                navMenu.classList.remove('open');
+
+                setTimeout(() => {
+                    backButton.style.display = 'none';
+                    navMenu.classList.remove('closing')
+                }, 400);
+            }
+        </script>
     </body>
 </html>
