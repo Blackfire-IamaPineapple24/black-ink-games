@@ -382,6 +382,22 @@
 
             }
 /* #endregion */
+
+
+
+/* #region FONTS -- */
+            @font-face
+            {
+                font-family: "BIG-Icons";
+                src: url("/Resources/Fonts/BIG-Icons.woff2") format("woff2"), url("/Resources/Fonts/BIG-Icons.ttf") format("truetype");
+            }
+
+            .custom-icons
+            {
+                font-family: "Segoe MDL2 Assets", "BIG-Icons", sans-serif;
+            }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
 </style>
     </head>
     <body>
@@ -413,7 +429,7 @@
         <div class="content-panel">
             <!-- This is the button for the navigation menu on small screens. -->
             <div class="nav-hamburger">
-                <button class="button button2" style="width: 45px; height: 45px; margin-bottom: 0; font-family: 'Segoe MDL2 Assets'" onclick="openNav()"></button>
+                <button class="button button2" style="width: 45px; height: 45px; margin-bottom: 0; font-family: 'Segoe MDL2 Assets', 'BIG-Icons'" onclick="openNav()"></button>
             </div>
 
             <!-- What are you doing on IE11 you psycho?? -->
@@ -461,7 +477,7 @@
 
                 <!-- Give Feedback (Opens Github Issues) -->
                 <div style="display: flex; align-items: center; gap: 6px;">
-                    <p style="font-family: 'Segoe MDL2 Assets', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
+                    <p style="font-family: 'Segoe MDL2 Assets', 'BIG-Icons', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
                     <a href="https://github.com/Blackfire-IamaPineapple24/black-ink-games/issues/new"> Give Feedback </a>
                 </div>
 
