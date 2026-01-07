@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Black Ink Games </title>
+        <link rel="icon" type="image/x-icon" href="/Resources/Images/Favicon.ico">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-Color: #000000;
+                display: flex;
+                justify-content: left;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            #banner {
+                width: 100vw;
+                padding: 40px 0;
+                padding-left: 40px;
+                text-align: left;
+                background: linear-gradient(to right, 
+                    #000000 0%, 
+                    #000000 20%, 
+                    #030505 30%, 
+                    #0f1618 40%, 
+                    #26383d 50%, 
+                    #4a6972 55%, 
+                    #658c99 60%, 
+                    #6e9daa 65%, 
+                    #7cb0be 70%, 
+                    #9bdaeb 100%);
+                margin: 0 0 20px 0;
+                color: #ffffff;
+                box-sizing: border-box;
+                border-bottom: 3px solid #ffffff;
+            }
+
+            #main {
+                color: #ffffff;
+                padding-left: 40px;
+            }
+            
+            @keyframes fadeColour {
+                from {
+                    border: 2px solid #ffffff;
+                    color: #ffffff;
+                }
+                to {
+                    border: 2px solid #9bdaeb;
+                    color: #9bdaeb;
+                }
+            }
+            
+            .button {
+                background-color: #000000;
+                color: #ffffff;
+                border: 2px solid #ffffff;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .button:hover {
+                animation-name: fadeColour;
+                animation-duration: 0.15s;
+                animation-iteration-count: 1;
+                border: 2px solid #9bdaeb;
+                color: #9bdaeb;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div id="banner">
+                <h1> <img src="/Resources/Images/BIGCircleTrans.png" height="100"> </h1>
+                <h1> Black Ink Games </h1>
+                <h3>
+                    <button class="button" onclick="document.location='/legacy/site/'"> Home </button>
+                    <button class="button" onclick="document.location='/legacy/site/GameJolt/'"> GameJolt </button>
+                    <button class="button" onclick="document.location='/legacy/site/Itch/'"> Itch.io </button>
+                    <button class="button" onclick="document.location='/legacy/site/Projects/'"> Current Projects </button>
+                    <button class="button" onclick="document.location='/legacy/site/Social/'"> Social </button>
+                    <button class="button" onclick="document.location='/legacy/site/BFI/'"> Blackfire Interactive </button>
+                    <button class="button" onclick="document.location='/'"> Back </button>
+                </h3>
+            </div>
+        <div id="main">
+            <h3> GameJolt </h3>
+            <p> Not very interesting at the moment. Most of my stuff is on Itch.io. But it's there. Enjoy. </p>
+            <p> <img src="/Resources/Images/gamejolt.jpg" height="350"> </p>
+            <a href="https://gamejolt.com/@blackInk_Games"> Go to this page </a>
+        </div>
+        </div>
+    </body>
+</html>
