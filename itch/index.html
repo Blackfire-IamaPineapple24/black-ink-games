@@ -33,7 +33,7 @@
                 font-family: 'Segoe UI', sans-serif;
                 color: rgba(255, 255, 255, 1);
                 background-color: rgba(0, 0, 0, 0);
-                background-image: url("/Resources/Images/wallpaper.jpg");
+                background-image: url("/Resources/Images/wallpaper.webp");
                 background-size: cover;
                 scrollbar-width: none !important;
                 -ms-overflow-style: none;
@@ -261,12 +261,12 @@
             {
                 content: '';
                 position: absolute;
-                top: 5px;
-                bottom: 5px;
+                top: 0px;
+                bottom: 0px;
                 left: 0;
                 width: 3px;
                 background-color: rgba(0, 120, 215, 1);
-                transition: width 0.5s ease-out;
+                transition: width 0.25s ease-out;
             }
             .button.selectedpage.animate::before
             {
@@ -412,12 +412,12 @@
 
                 <!-- Buttons -->
                 <div>
-                    <a class="button" href="/"> Home </a>
-                    <a class="button" href="/Gamejolt/"> GameJolt </a>
-                    <a class="button selectedpage" href="/itch/"> itch.io </a>
-                    <a class="button" href="/Projects/"> Projects </a>
-                    <a class="button" href="/Social/"> Social </a>
-                    <a class="button" href="/Blackfire-Interactive/"> Blackfire Interactive </a>
+                    <a class="button" href="/" onclick="setSelected(this)"> Home </a>
+                    <a class="button" href="/Gamejolt/" onclick="setSelected(this)"> GameJolt </a>
+                    <a class="button selectedpage" href="/itch/" onclick="setSelected(this)"> itch.io </a>
+                    <a class="button" href="/Projects/" onclick="setSelected(this)"> Projects </a>
+                    <a class="button" href="/Social/" onclick="setSelected(this)"> Social </a>
+                    <a class="button" href="/Blackfire-Interactive/" onclick="setSelected(this)"> Blackfire Interactive </a>
                 </div>
 
                 <div id="back" style="position: absolute; bottom: 20px; left: 0; width: 100%; display: none;">
@@ -528,6 +528,12 @@
                     backButton.style.display = 'none';
                     navMenu.classList.remove('closing')
                 }, 400);
+            }
+
+            function setSelected(element)
+            {
+                currentButton.classList.remove('selectedpage');
+                element.classList.add('selectedpage');
             }
         </script>
     </body>
