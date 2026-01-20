@@ -68,6 +68,7 @@
                 background: rgba(0, 0, 0, 1);
                 z-index: 1;
                 overflow-x: hidden;
+                user-select: none;
             }
 
             /* If you're using a browser that doesn't support display:grid, you get told to screw off because i haven't made the raw HTML version yet. */
@@ -297,6 +298,33 @@
                 margin: 0;
                 display: block;
             }
+
+            .button3
+            {
+                background: rgba(225, 225, 225, 1);
+                box-shadow: inset 0 0 0 2px rgba(0, 120, 215, 1);
+                color: rgba(0, 0, 0, 1);
+                border: none;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-family: "Segoe UI", sans-serif;
+                font-weight: 300;
+                transition: 0.4s ease;
+            }
+            .button3:hover
+            {
+                background: rgba(229, 241, 251, 1);
+                box-shadow: inset 0 0 0 1.1px rgba(6, 123, 216, 1);
+                transition: 0.4s ease;
+            }
+            .button3:active
+            {
+                background: rgba(204, 228, 247, 1);
+                box-shadow: inset 0 0 0 1.1px rgba(0, 84, 153, 1);
+                transition: 0.2s linear;
+            }
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* #endregion */
 
@@ -384,6 +412,52 @@
                 .nav-panel.open .button:nth-child(14) {transition-delay: 0.65s;}
 /* #endregion */
 
+                .popup-window
+                {
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100vw !important;
+                    border: none !important;
+                    background: rgba(0, 0, 0, 1) !important;
+                    color: rgba(255, 255, 255, 1) !important;
+                    box-shadow: none !important;
+                    transform: perspective(1000px) rotateY(180deg) scale(0.9) !important;
+                }
+                .popup-window.open
+                {
+                    transform: perspective(1000px) rotateY(0deg) scale(1) !important;
+                }
+
+                .title-bar
+                {
+                    position: sticky !important;
+                    background: rgba(0, 0, 0, 1) !important;
+                    color: rgba(255, 255, 255, 1) !important;
+                }
+
+                .popup-content
+                {
+                    height: 100vh !important;
+                    background: rgba(0, 0, 0, 1) !important;
+                    border-top: none !important;
+                }
+
+                .close-button
+                {
+                    background: rgba(0, 0, 0, 1) !important;
+                    color: rgba(255, 255, 255, 1) !important;
+                }
+                .close-button:hover
+                {
+                    background: rgba(232, 17, 35, 1) !important;
+                    color: rgba(255, 255, 255, 1) !important;
+                }
+                .close-button:active
+                {
+                    background: rgba(241, 112, 122, 1) !important;
+                    color: rgba(0, 0, 0, 1) !important;
+                    transition: none !important;
+                }
             }
 /* #endregion */
 
@@ -401,6 +475,110 @@
                 font-family: "Segoe MDL2 Assets", "BIG-Icons", sans-serif;
             }
 /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+/* #endregion */
+
+
+
+
+
+
+
+/* #region POPUP WINDOW --------------------------------------------------------- */
+            .popup-window
+            {
+                position: fixed;
+                top: 100px;
+                left: 100px;
+                width: 900px;
+                border: 1px solid #6d6d6d;
+                background: rgba(240, 240, 240, 1);
+                z-index: 9999;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+                color: rgba(0, 0, 0, 1);
+                opacity: 0;
+                pointer-events: none;
+                transform-style: preserve-3d;
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            }
+            .popup-window.open
+            {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .title-bar
+            {
+                height: 32px;
+                background: rgba(255, 255, 255, 1);
+                padding: 0 0 0 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                user-select: none;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .title-text
+            {
+                font-size: 13px;
+                line-height: 1;
+                margin: 0;
+            }
+
+            .close-button
+            {
+                width: 50px;
+                height: 100%;
+                background: rgba(255, 255, 255, 1);
+                border: none;
+                color: rgba(0, 0, 0, 1);
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Segoe MDL2 Assets", sans-serif;
+                transition: background-color 0.2s ease, color 0.12s ease;
+            }
+            .close-button:hover
+            {
+                background: rgba(232, 17, 35, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+            .close-button:active
+            {
+                background: rgba(241, 112, 122, 1);
+                color: rgba(255, 255, 255, 1);
+                transition: none;
+            }
+
+            .popup-content
+            {
+                display: inline-block;
+                padding: 10px;
+                height: 500px;
+                overflow-y: auto;
+                background: rgba(240, 240, 240, 1);
+                border-top: 1px solid rgba(255, 255, 255, 1);
+            }
+
+            @media (min-width: 1131px)
+            {
+                .popup-window
+                {
+                    transform: perspective(1200px) rotateX(5deg) translateY(-10px);
+                    color: rgba(0, 0, 0, 1) !important;
+                }
+                .popup-window.open
+                {
+                    transform: perspective(1200px) rotateX(0deg) translateY(0);
+                }
+
+                .popup-content
+                {
+                    color: rgba(0, 0, 0, 1) !important;
+                }
+            }
 /* #endregion */
         </style>
     </head>
@@ -456,7 +634,7 @@
                 <a class="button button2" style="height: 32px; padding-top: 5px;" href="https://github.com/Blackfire-IamaPineapple24"> GitHub </a>
                 <a class="button button2" style="height: 32px; padding-top: 5px;" href="https://bsky.app/profile/black-ink-games.blackfire-interactive.website"> Bluesky </a>
                 <br>
-                <a class="button button2" style="height: 32px; padding-top: 5px;" onclick="document.location='/button-playground.html'"> Here! (WIP) </a>
+                <a class="button button2" style="height: 32px; width: 204px; padding-top: 5px;" id="openPosts" href="#"> Here! (WIP) </a>
             </div>
 
             <!-- The sidebar. -->
@@ -491,11 +669,45 @@
             </div>
         </div>
 
+        <div class="popup-window" id="popupWindow">
+            <div class="title-bar" id="popupTitleBar">
+                <span class="title-text"> Posts </span>
+                <div class="close-button" id="popupCloseBtn"></div>
+            </div>
+            <div class="popup-content" id="popupContent">
+
+                <button id="popupBack" style="margin-top: 10px; display: none;" class="button3"> Back </button>
+                <div id="popupHome">
+                    <h3> Content </h3>
+                    <p> Links </p>
+                    <ul>
+                        <li><a class="popup-link" href="/Social/Posts/Title1.html">Title1 (DD/MM/YY) </a></li>
+                        <li><a class="popup-link" href="/Social/Posts/Title2.html">Title2 (DD/MM/YY) </a></li>
+                    </ul>
+                </div>
+                <iframe id="popupIframe" style="display: none; width: 100%; height: 100%; border: none; background: inherit;"></iframe>
+                
+            </div>
+
+            
+        </div>
         <script>
+            // References
             const buttons = document.querySelectorAll('.button');
             const currentButton = document.querySelector('.selectedpage');
             const navMenu = document.querySelector('.nav-panel');
             const backButton = document.getElementById('back');
+            const popupWin = document.getElementById("popupWindow");
+            const popupClose = document.getElementById("popupCloseBtn");
+            const popupTitleBar = document.getElementById("popupTitleBar");
+            const popupOpen = document.getElementById("openPosts");
+            const popupContent = document.getElementById("popupContent");
+            const popupHome = document.getElementById("popupHome");
+            const popupIframe = document.getElementById("popupIframe");
+            const popupBack = document.getElementById("popupBack");
+
+            const isThin = window.matchMedia("(max-width: 1130px)").matches;
+            const closeButton =document.getElementById("popupCloseBtn");
             
             // Tracks the mouse and sets a radial gradient on the mouse's position for all elements with the .button CSS class.
             document.addEventListener('mousemove', (e) =>
@@ -550,6 +762,206 @@
                 currentButton.classList.remove('selectedpage');
                 element.classList.add('selectedpage');
             }
+
+            // Make the window visible
+            popupOpen.addEventListener("click", (e) =>
+            {
+                e.preventDefault(); 
+                popupWin.classList.add("open");
+            });
+
+            // Close the window
+            popupClose.onclick = () => popupWin.classList.remove("open");
+
+            // Make the window draggable
+            let offsetX = 0, offsetY = 0, isDown = false;
+            popupTitleBar.addEventListener("mousedown", function(e)
+            {
+                if (e.target === popupClose || popupClose.contains(e.target)) return;
+                isDown = true;
+                offsetX = e.clientX - popupWin.offsetLeft;
+                offsetY = e.clientY - popupWin.offsetTop;
+                e.preventDefault();
+            });
+            document.addEventListener("mousemove", function(e)
+            {
+                if (!isDown) return;
+                popupWin.style.left = (e.clientX - offsetX) + "px";
+                popupWin.style.top = (e.clientY - offsetY) + "px";
+            });
+
+            document.addEventListener("mouseup", () => { isDown = false; });
+
+            // Does the browser support MDL2 Assets? This creates a fallback in case it doesn't.
+            // Not using the BIG-Icons font here because Unicode already has a standard character that looks VERY similar, ✕.
+            
+            // This function detects if the specified character exists in the font the device is using.
+            function fontSupportsCharacter(font, character) {
+                const canvas = document.createElement("canvas");
+                const ctx = canvas.getContext("2d");
+                ctx.font = `100px ${font}, monospace`;
+                const widthWithFont = ctx.measureText(character).width;
+                ctx.font = "100px monospace";
+                const widthWithoutFont = ctx.measureText(character).width;
+                return widthWithFont !== widthWithoutFont;
+            }
+
+            // Actually change the glyph based on its availability
+            if (fontSupportsCharacter("Segoe MDL2 Assets", ""))
+            {
+                closeButton.textContent = "";
+                closeButton.style.fontFamily = '"Segoe MDL2 Assets", sans-serif';
+            }
+            else
+            {
+                closeButton.textContent = "✕";
+                closeButton.style.fontFamily = '"Arial", sans-serif';
+            }
+
+            // Load posts into the popup
+            function loadPost(url) {
+                fetch(url)
+                    .then(res => res.text())
+                    .then(html => {
+                        popupIframe.srcdoc = "";  
+                        popupIframe.style.display = "block";
+                    
+                        const iframeDoc = popupIframe.contentDocument || popupIframe.contentWindow.document;
+                        iframeDoc.open();
+                        iframeDoc.write('<!DOCTYPE html><html lang="en"><head><title>Post</title>');
+                        
+                        iframeDoc.write(`<base href="${window.location.origin}/">`);
+                        
+                        // Keep fonts/icons
+                        const allStyles = document.querySelectorAll('style');
+                        allStyles.forEach(style => {
+                            const content = style.textContent;
+                            if (content.includes('@font-face')) {
+                                const fontStyle = document.createElement('style');
+                                fontStyle.textContent = content;
+                                iframeDoc.head.appendChild(fontStyle);
+                            }
+                        });
+                    
+                        iframeDoc.write(`
+                            <style>
+                                html, body {
+                                    margin: 0;
+                                    padding: 15px;
+                                    font-family: "Segoe UI", sans-serif;
+                                    background: inherit !important;
+                                    line-height: 1.5;
+                                }
+                            
+                                a {
+                                    color: #0066cc !important;
+                                    text-decoration: none;
+                                }
+                                a:hover {
+                                    color: #0055aa !important;
+                                }
+                            
+                                @media (max-width: 1130px) {
+                                    a {
+                                        color: #60a5fa !important;
+                                    }
+                                    a:hover {
+                                        color: #93c5fd !important;
+                                    }
+                                }
+                            </style>
+                        `);
+                        
+                        iframeDoc.write('</head><body>');
+                        iframeDoc.write(html);
+                        
+                        // Force color on every text-containing element (this overrides cloned white)
+                        const isThin = window.matchMedia("(max-width: 1130px)").matches;
+                        const targetColor = isThin ? 'white' : 'black';
+                        
+                        const textElements = iframeDoc.body.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, li, strong, em, a');
+                        textElements.forEach(el => {
+                            el.style.color = targetColor;
+                        });
+                    
+                        // Also force body itself just in case
+                        iframeDoc.body.style.color = targetColor;
+                    
+                        iframeDoc.write('</body></html>');
+                        iframeDoc.close();
+                    
+                        iframeDoc.defaultView.scrollTo(0, 0);
+                    })
+                    .catch(err => console.error("Error loading post:", err));
+            }
+
+            // Handle clicks, open links
+            popupContent.addEventListener("click", function(e)
+            {
+                const link = e.target.closest(".popup-link");
+                if (!link)
+                {
+                    return;
+                }
+                e.preventDefault();
+                popupHome.style.display = "none";
+                popupIframe.style.display = "block";
+                popupBack.style.display = "block";
+                const url = link.getAttribute("href");
+                loadPost(url);
+            });
+
+            // Close the post
+            popupBack.addEventListener("click", () =>
+            {
+                popupIframe.style.display = "none";
+                popupIframe.src = "";
+                popupBack.style.display = "none";
+                popupHome.style.display = "block";
+            });
+
+            function selectButtonType(thin)
+            {
+                popupBack.classList.remove("button", "button2", "button3");
+
+                if (thin)
+                {
+                    popupBack.classList.add("button", "button2");
+                    popupBack.style.height = "32px";
+                    popupBack.style.fontFamily = `"Segoe UI", sans-serif`;
+                    popupBack.style.fontWeight = "300";
+                }
+                else
+                {
+                    popupBack.classList.add("button3");
+                    popupBack.style.height = "25.5px";
+                    popupBack.style.fontFamily = `"Segoe UI", sans-serif`;
+                    popupBack.style.fontWeight = "300";
+                }
+            }
+
+            // Make popup text color adaptive on resize
+            window.addEventListener('resize', () => {
+                if (!popupIframe.contentDocument) return;  // iframe not open/loaded yet
+            
+                const iframeDoc = popupIframe.contentDocument;
+                const isThin = window.matchMedia("(max-width: 1130px)").matches;
+                const targetColor = isThin ? 'white' : 'black';
+            
+                // Apply to body and common text elements
+                if (iframeDoc.body) {
+                    iframeDoc.body.style.color = targetColor;
+                }
+            
+                const textElements = iframeDoc.querySelectorAll('h1, h2, h3, p, span, div, li, strong, em, a');
+                textElements.forEach(el => {
+                    el.style.color = targetColor;
+                });
+
+                selectButtonType(isThin);
+            });
+
+            selectButtonType(isThin);
         </script>
     </body>
 </html>
