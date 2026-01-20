@@ -774,7 +774,18 @@
             });
 
             // Close the window
-            popupClose.onclick = () => popupWin.classList.remove("open");
+            popupClose.onclick = () =>
+            {
+                popupWin.classList.remove("open");
+            
+                setTimeout(() =>
+                {
+                    popupIframe.style.display = "none";
+                    popupIframe.src = "";
+                    popupBack.style.display = "none";
+                    popupHome.style.display = "block";
+                }, 500);
+            };
 
             // Make the window draggable
             let offsetX = 0, offsetY = 0, isDown = false;
