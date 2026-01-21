@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Do we need to call MatPat again? This is so meta. -->
@@ -668,7 +670,7 @@
                 <a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);"> Destroying webpages with Kickassapp </a>
                 <br style="margin-bottom: 18px;">
 
-                <!-- Give Feedback (Opens Github Issues) -->
+                Give Feedback (Opens Github Issues)
                 <div style="display: flex; align-items: center; gap: 6px;">
                     <p style="font-family: 'Segoe MDL2 Assets', 'BIG-Icons', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
                     <a href="https://github.com/Blackfire-IamaPineapple24/black-ink-games/issues/new"> Give Feedback </a>
@@ -678,6 +680,7 @@
             </div>
         </div>
 
+        <!-- This is the popup window for posts. Obviously. -->
         <div class="popup-window" id="popupWindow">
             <div class="title-bar" id="popupTitleBar">
                 <span class="title-text"> Posts </span>
@@ -837,8 +840,8 @@
                 fetch(url)
                     .then(res => res.text())
                     .then(html => {
-                        popupIframe.srcdoc = "";  
-                        popupIframe.style.display = "block";
+                        popupIframe.srcdoc = ""; // Reset the iframe
+                        popupIframe.style.display = "block"; // Make it visible
                     
                         const iframeDoc = popupIframe.contentDocument || popupIframe.contentWindow.document;
                         iframeDoc.open();
@@ -857,6 +860,12 @@
                             }
                         });
                     
+                        // This goddamn CSS istg
+                        /* It needs to be seperate so that the rules for
+                           thin screens apply to the popup iframe. don't ask why,
+                           just be thankful it works. */
+                        /* Anyway, this "line" writes CSS to the iframe so that I
+                           don't need to do it for every post. */
                         iframeDoc.write(`
                             <style>
                                 html, body {
@@ -889,7 +898,8 @@
                         iframeDoc.write('</head><body>');
                         iframeDoc.write(html);
                         
-                        // Force color on every text-containing element (this overrides cloned white)
+                        /* Override anything that still tells the text to be white
+                           on widescreen. (yes this code is messy shut up) */
                         const isThin = window.matchMedia("(max-width: 1130px)").matches;
                         const targetColor = isThin ? 'white' : 'black';
                         
@@ -898,10 +908,10 @@
                             el.style.color = targetColor;
                         });
                     
-                        // Also force body itself just in case
+                        // Same thing as above basically
                         iframeDoc.body.style.color = targetColor;
                     
-                        iframeDoc.write('</body></html>');
+                        iframeDoc.write('</body></html>'); // Finish writing html
                         iframeDoc.close();
                     
                         iframeDoc.defaultView.scrollTo(0, 0);
@@ -934,6 +944,7 @@
                 popupHome.style.display = "block";
             });
 
+            // Function to change button type based on screen size
             function selectButtonType(thin)
             {
                 popupBack.classList.remove("button", "button2", "button3");
@@ -962,7 +973,6 @@
                 const isThin = window.matchMedia("(max-width: 1130px)").matches;
                 const targetColor = isThin ? 'white' : 'black';
             
-                // Apply to body and common text elements
                 if (iframeDoc.body) {
                     iframeDoc.body.style.color = targetColor;
                 }
