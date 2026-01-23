@@ -114,7 +114,7 @@
             /* Page content. */
             .content
             {
-                max-width: calc(100% - 40px);
+                max-width: calc(100% - 360px);
                 top: 35px;
                 left: 20px;
                 display: block;
@@ -333,6 +333,11 @@
 /* #region THIN VERSION FOR SMALL SCREENS -------------------------------------- */
             @media (max-width: 1130px)
             {
+                .content
+                {
+                    max-width: calc(100% - 40px);
+                }
+                
                 .sidebar-content
                 {
                     position: relative;
@@ -689,6 +694,7 @@
                 <div id="popupHome">
                     <h3> Links </h3>
                     <ul>
+                        <li><a class="popup-link" href="/Social/Posts/FixedTheSidebar.html"> Fixed the Sidebar (23/1/26) </a></li>
                         <li><a class="popup-link" href="/Social/Posts/PostsPageDone.html"> Posts Page Done! (20/01/26) </a></li>
                     </ul>
                 </div>
