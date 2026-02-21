@@ -1,0 +1,14 @@
+<h1> Additional Notes on the latest Cortana commits </h1>
+<h2> What's Changed? </h2>
+<p> I added an installer in C# that does the following: </p>
+<ul>
+    <li> Copies the wake word detector script to AppData/Roaming/cortana </li>
+    <li> Copies the wake word prediction model to the same folder </li>
+    <li> Checks if python is installed and prompts you to install it if not </li>
+    <li> Creates a scheduled task to start listening for "Hey Cortana" at startup </li>
+    <li> Starts listening immediately to avoid the need to log out </li>
+</ul>
+<p> I finished the wake word detection script, it now launches the app as it should. </p>
+<h2> What's to come? </h2>
+<p> I've added a launch arg to the app that launches it in "voice mode",
+<br>but that's not done yet. </p>
