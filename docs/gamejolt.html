@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Do we need to call MatPat again? This is so meta. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico">
+        <title> GameJolt - Black Ink Games </title>
+        <link rel="stylesheet" href="/resources/styles/main.css">
+    </head>
+    <body>
+        <!-- Navigation Panel, contains tabs for parts of the site. -->
+        <div class="nav-panel">
+            <!-- Navbar content -->
+            <div class="nav-content">
+                <div class="window-title">
+                    <p style="margin: 0;"> Black Ink Games </p> <!-- "Window Title" -->
+                </div> 
+
+                <!-- Buttons -->
+                <div>
+                    <a class="button" href="/" onclick="setSelected(this)"> Home </a>
+                    <a class="button selectedpage" href="/gamejolt.html" onclick="setSelected(this)"> GameJolt </a>
+                    <a class="button" href="/itch.html" onclick="setSelected(this)"> itch.io </a>
+                    <a class="button" href="/projects.html" onclick="setSelected(this)"> Projects </a>
+                    <a class="button" href="/social.html" onclick="setSelected(this)"> Social </a>
+                    <a class="button" href="/bfi.html" onclick="setSelected(this)"> Blackfire Interactive </a>
+                </div>
+
+                <div id="back" style="position: absolute; bottom: 20px; left: 0; width: 100%; display: none;">
+                    <a class="button" onclick="closeNav()"> Back </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-panel">
+            <!-- This is the button for the navigation menu on small screens. -->
+            <div class="nav-hamburger">
+                <button class="button button2" style="width: 45px; height: 45px; margin-bottom: 0; font-family: 'Segoe MDL2 Assets', 'BIG-Icons'" onclick="openNav()"></button>
+            </div>
+
+            <!-- What are you doing on IE11 you psycho?? -->
+            <div class="no-support">
+                <h1> Using an archaic browser? Click on the "Legacy" link on the home page. </h1>
+            </div>
+
+            <!-- Page content (The important bit!) -->
+            <div class="content">
+                <h1> GameJolt </h1>
+                <p> Not very interesting at the moment. Most of my stuff is on itch.io. But it's there. Enjoy. </p>
+                <img src="/resources/images/gamejolt.webp" style="border: 2px solid rgba(255, 255, 255, 0.3); width: calc(100% - 10px); max-width: 500px;">
+            </div>
+
+            <!-- The sidebar. -->
+            <div class="sidebar-content">
+                <!-- Relaed Settings (Links to Windows Settings) -->
+                <h3 style="margin-bottom: 10px;"> Related Settings </h3>
+                <a href="ms-settings:gaming-gamebar"> Edit Xbox Game Bar settings </a>
+                <br style="margin-bottom: 13px;">
+                <a href="ms-settings:gaming-gamedvr"> Configure captures in Xbox Game Bar </a>
+                <br style="margin-bottom: 13px">
+                <a href="ms-settings:gaming-gamemode"> Enable or disable Windows Gaming Mode </a>
+                <br style="margin-bottom: 15px;">
+
+                <!-- Help from the web (Just some fun links) -->
+                <h3 style="margin-bottom: 10px"> Help from the web </h3>
+                <a href="https://gamejolt.com/@blackInk_Games"> Viewing this page </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://gamejolt.com/about"> Finding out about GameJolt </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://wamwoowam.co.uk/"> Viewing the site that gave me the idea <br> for this </a>
+                <br style="margin-bottom: 5px;">
+                <a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);"> Destroying webpages with Kickassapp </a>
+                <br style="margin-bottom: 18px;">
+
+                <!-- Give Feedback (Opens Github Issues) -->
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <p style="font-family: 'Segoe MDL2 Assets', 'BIG-Icons', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
+                    <a href="https://github.com/Blackfire-IamaPineapple24/black-ink-games/issues/new"> Give Feedback </a>
+                </div>
+
+                <br style="margin-bottom: 15px;">
+            </div>
+        </div>
+
+        <script src="/resources/scripts/buttons.js"></script>
+    </body>
+</html>

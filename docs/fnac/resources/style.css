@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+#content {
+    width: 900px;
+    background-color: rgba(224, 224, 224, 1);
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#banner {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 100px;
+    background: linear-gradient(to bottom, rgba(255, 166, 0, 1), rgba(172, 94, 0, 1));
+    border-bottom: 3px solid rgba(0, 0, 0, 1);
+    margin: 0 0 20px 0;
+}
+
+#main {
+    padding: 0 30px;
+    flex: 1;
+}
+
+#footer {
+    background-color: rgba(208, 208, 208, 1);
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}

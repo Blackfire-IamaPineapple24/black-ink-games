@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Do we need to call MatPat again? This is so meta. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico">
+        <title> Social - Black Ink Games </title>
+        <link rel="stylesheet" href="/resources/styles/social.css">
+    </head>
+    <body>
+        <!-- Navigation Panel, contains tabs for parts of the site. -->
+        <div class="nav-panel">
+            <!-- Navbar content -->
+            <div class="nav-content">
+                <div class="window-title">
+                    <p style="margin: 0;"> Black Ink Games </p> <!-- "Window Title" -->
+                </div> 
+
+                <!-- Buttons -->
+                <div>
+                    <a class="button" href="/" onclick="setSelected(this)"> Home </a>
+                    <a class="button" href="/gamejolt.html" onclick="setSelected(this)"> GameJolt </a>
+                    <a class="button" href="/itch.html" onclick="setSelected(this)"> itch.io </a>
+                    <a class="button" href="/projects.html" onclick="setSelected(this)"> Projects </a>
+                    <a class="button selectedpage" href="/social.html" onclick="setSelected(this)"> Social </a>
+                    <a class="button" href="/bfi.html" onclick="setSelected(this)"> Blackfire Interactive </a>
+                </div>
+
+                <div id="back" style="position: absolute; bottom: 20px; left: 0; width: 100%; display: none;">
+                    <a class="button" onclick="closeNav()"> Back </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-panel">
+            <!-- This is the button for the navigation menu on small screens. -->
+            <div class="nav-hamburger">
+                <button class="button button2" style="width: 45px; height: 45px; margin-bottom: 0; font-family: 'Segoe MDL2 Assets', 'BIG-Icons'" onclick="openNav()"></button>
+            </div>
+
+            <!-- What are you doing on IE11 you psycho?? -->
+            <div class="no-support">
+                <h1> Using an archaic browser? Click on the "Legacy" link on the home page. </h1>
+            </div>
+
+            <!-- Page content (The important bit!) -->
+            <div class="content">
+                <h1> Social </h1>
+                <h2 style="margin-bottom: 0;"> CONTACT ME </h2>
+                <p class="grey-p"> I'll respond to Emails pretty fast. You can also leave a shout on my GameJolt, but I don't check there often. </p>
+                <br>
+                <a class="button button2" style="height: 32px; padding-top: 5px;" href="https://gamejolt.com/@blackInk_Games"> GameJolt </a>
+                <a class="button button2" style="height: 32px; padding-top: 5px;" href="mailto:jack@blackfire-interactive.website"> Email </a>
+                <br>
+                <h2 style="margin-bottom: 0;"> OTHER SOCIALS </h2>
+                <p class="grey-p"> You can't necessarily contact me here, but I post on these platforms. </p>
+                <br>
+                <a class="button button2" style="height: 32px; padding-top: 5px;" href="https://github.com/Blackfire-IamaPineapple24"> GitHub </a>
+                <a class="button button2" style="height: 32px; padding-top: 5px;" href="https://bsky.app/profile/black-ink-games.blackfire-interactive.website"> Bluesky </a>
+                <br>
+                <a class="button button2" style="height: 32px; width: 204px; padding-top: 5px;" id="openPosts" href="#"> Here! </a>
+            </div>
+
+            <!-- The sidebar. -->
+            <div class="sidebar-content">
+                <!-- Relaed Settings (Links to Windows Settings) -->
+                <h3 style="margin-bottom: 10px;"> Related Settings </h3>
+                <a href="ms-settings:privacy"> Change settings for privacy in Windows </a>
+                <br style="margin-bottom: 13px;">
+                <a href="ms-settings:appsfeatures"> Manage apps installed on your device </a>
+                <br style="margin-bottom: 15px;">
+
+                <!-- Help from the web (Just some fun links) -->
+                <h3 style="margin-bottom: 10px"> Help from the web </h3>
+                <a href="https://www.wikihow.com/Make-an-Email-Address-for-Free"> Creating an Email account </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github"> Creating an account on GitHub </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://bsky.social/about/blog/5-19-2023-user-faq"> Creating a Bluesky account </a>
+                <br style="margin-bottom: 5px;">
+                <a href="https://wamwoowam.co.uk/"> Viewing the site that gave me the idea <br> for this </a>
+                <br style="margin-bottom: 5px;">
+                <a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);"> Destroying webpages with Kickassapp </a>
+                <br style="margin-bottom: 18px;">
+
+                <!-- Give Feedback (Opens Github Issues) -->
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <p style="font-family: 'Segoe MDL2 Assets', 'BIG-Icons', sans-serif; margin: 0; font-size: 12pt; line-height: 1;"></p>
+                    <a href="https://github.com/Blackfire-IamaPineapple24/black-ink-games/issues/new"> Give Feedback </a>
+                </div>
+
+                <br style="margin-bottom: 15px;">
+            </div>
+        </div>
+
+        <!-- This is the popup window for posts. Obviously. -->
+        <div class="popup-window" id="popupWindow">
+            <div class="title-bar" id="popupTitleBar">
+                <span class="title-text"> Posts </span>
+                <div class="close-button" id="popupCloseBtn"></div>
+            </div>
+            <div class="popup-content" id="popupContent">
+                <button id="popupBack" style="margin-top: 10px; display: none;" class="button3"> Back </button>
+                <div id="popupHome">
+                    <h3> Links </h3>
+                    <ul>
+                        <li> <a class="popup-link" href="/social-posts/20-2-26.html"> Notes on new Cortana commits (20/2/26) </a> </li>
+                        <li> <a class="popup-link" href="/social-posts/24-1-26/24-1-26.html"> Linux (24/1/26) </a> </li>
+                        <li> <a class="popup-link" href="/social-posts/23-1-26.html"> Fixed the Sidebar (23/1/26) </a> </li>
+                        <li> <a class="popup-link" href="/social-posts/20-1-26.html"> Posts Page Done! (20/01/26) </a> </li>
+                    </ul>
+                </div>
+                <iframe id="popupIframe" style="display: none; width: 100%; height: 100%; border: none; background: inherit;"></iframe>
+            </div>
+        </div>
+
+        <script src="/resources/scripts/buttons.js"></script>
+        <script src="/resources/scripts/popup.js"></script>
+    </body>
+</html>
