@@ -4,9 +4,9 @@
         <!-- Do we need to call MatPat again? This is so meta. -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="/Resources/Images/Favicon.ico">
-        <title>Blackfire Interactive</title>
-        <link rel="stylesheet" href="/Resources/CSS/MainStyle.css">
+        <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico">
+        <title> Blackfire Interactive - Black Ink Games </title>
+        <link rel="stylesheet" href="/resources/styles/main.css">
     </head>
     <body>
         <!-- Navigation Panel, contains tabs for parts of the site. -->
@@ -20,11 +20,11 @@
                 <!-- Buttons -->
                 <div>
                     <a class="button" href="/" onclick="setSelected(this)"> Home </a>
-                    <a class="button" href="/Gamejolt/" onclick="setSelected(this)"> GameJolt </a>
-                    <a class="button" href="/itch/" onclick="setSelected(this)"> itch.io </a>
-                    <a class="button" href="/Projects/" onclick="setSelected(this)"> Projects </a>
-                    <a class="button" href="/Social/" onclick="setSelected(this)"> Social </a>
-                    <a class="button selectedpage" href="/Blackfire-Interactive/" onclick="setSelected(this)"> Blackfire Interactive </a>
+                    <a class="button" href="/gamejolt.html" onclick="setSelected(this)"> GameJolt </a>
+                    <a class="button" href="/itch.html" onclick="setSelected(this)"> itch.io </a>
+                    <a class="button" href="/projects.html" onclick="setSelected(this)"> Projects </a>
+                    <a class="button" href="/social.html" onclick="setSelected(this)"> Social </a>
+                    <a class="button selectedpage" href="/bfi.html" onclick="setSelected(this)"> Blackfire Interactive </a>
                 </div>
 
                 <div id="back" style="position: absolute; bottom: 20px; left: 0; width: 100%; display: none;">
@@ -48,7 +48,7 @@
             <div class="content">
                 <h1> Blackfire Interactive </h1>
                 <p> This is the site for the "company" I own, with my friend. We're currently developing a couple of games... Anyway, it's all on the site. </p>
-                <img src="/Resources/Images/bfi.webp" style="border: 2px solid rgba(255, 255, 255, 0.3); width: calc(100% - 10px); max-width: 500px;">
+                <img src="/resources/images/bfi.webp" style="border: 2px solid rgba(255, 255, 255, 0.3); width: calc(100% - 10px); max-width: 500px;">
             </div>
 
             <!-- The sidebar. -->
@@ -79,65 +79,6 @@
             </div>
         </div>
 
-        <script>
-            const buttons = document.querySelectorAll('.button');
-            const currentButton = document.querySelector('.selectedpage');
-            const navMenu = document.querySelector('.nav-panel');
-            const backButton = document.getElementById('back');
-            
-            // Tracks the mouse and sets a radial gradient on the mouse's position for all elements with the .button CSS class.
-            document.addEventListener('mousemove', (e) =>
-            {
-                buttons.forEach(button =>
-                {
-                    const rect = button.getBoundingClientRect();
-                    const xPer = ((e.clientX - rect.left) / rect.width * 100);
-                    const yPer = ((e.clientY - rect.top) / rect.height * 100);
-    
-                    button.style.setProperty('--light-x', `${xPer}%`);
-                    button.style.setProperty('--light-y', `${yPer}%`);
-                    button.style.setProperty('--light-opacity', 0.08);
-                });
-            });
-
-            buttons.forEach(button =>
-            {
-                button.addEventListener('mousedown', () =>
-                {
-                    button.classList.remove('click-animate');
-                    void button.offsetWidth;
-                    button.classList.add('click-animate');
-                });
-            });
-
-            window.addEventListener('DOMContentLoaded', () =>
-            {
-                const selectedButton = document.querySelector('.button.selectedpage');
-                selectedButton.classList.add('animate');
-            })
-
-            function openNav()
-            {
-                navMenu.classList.remove('closing');
-                navMenu.classList.add('open');
-                backButton.style.display = 'block';
-            }
-            function closeNav()
-            {
-                navMenu.classList.add('closing');
-                navMenu.classList.remove('open');
-
-                setTimeout(() => {
-                    backButton.style.display = 'none';
-                    navMenu.classList.remove('closing')
-                }, 400);
-            }
-
-            function setSelected(element)
-            {
-                currentButton.classList.remove('selectedpage');
-                element.classList.add('selectedpage');
-            }
-        </script>
+        <script src="/resources/scripts/buttons.js"></script>
     </body>
 </html>

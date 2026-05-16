@@ -22,7 +22,7 @@
                 font-family: 'Segoe UI', sans-serif;
                 color: rgba(255, 255, 255, 1);
                 background-color: rgba(0, 0, 0, 0);
-                background-image: url("/Resources/Images/wallpaper.webp");
+                background-image: url("/resources/images/background.webp");
                 background-size: cover;
                 scrollbar-width: none !important;
                 -ms-overflow-style: none;
@@ -461,7 +461,7 @@
             @font-face
             {
                 font-family: "BIG-Icons";
-                src: url("/Resources/Fonts/BIG-Icons.woff2") format("woff2"), url("/Resources/Fonts/BIG-Icons.ttf") format("truetype");
+                src: url("/resources/fonts/big-icons.woff2") format("woff2"), url("/resources/fonts/big-icons.ttf") format("truetype");
             }
 
             .custom-icons
