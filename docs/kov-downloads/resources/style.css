@@ -5,7 +5,8 @@ body
     background-size: cover;
     background-attachment: fixed;
     color: rgba(180, 100, 0, 1);
-    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 430;
     user-select: none;
 }
 
@@ -117,8 +118,8 @@ img
 /* #region FONTS */
 @font-face
 {
-    font-family: "Arial Rounded MT Bold";
-    src: url("/kov-downloads/resources/fonts/arialrounded.ttf") format("truetype");
+    font-family: "Fredoka";
+    src: url("/kov-downloads/resources/fonts/fredoka.ttf") format("truetype");
 }
 /* #endregion */
 
