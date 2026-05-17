@@ -121,3 +121,12 @@ img
     src: url("/kov-downloads/resources/fonts/arialrounded.ttf") format("truetype");
 }
 /* #endregion */
+
+/* #region MEDIA */
+@media (max-width: 500px)
+{
+    .title
+    {
+        font-size: 25pt;
+    }
+}
