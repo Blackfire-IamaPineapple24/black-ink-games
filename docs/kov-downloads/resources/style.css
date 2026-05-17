@@ -113,3 +113,11 @@ img
     margin-bottom: 0px;
 }
 /* #endregion */
+
+/* #region FONTS */
+@font-face
+{
+    font-family: "Arial Rounded MT Bold";
+    src: url("/kov-downloads/resources/fonts/arialrounded.ttf") format("truetype");
+}
+/* #endregion */
