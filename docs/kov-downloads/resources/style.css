@@ -1,0 +1,113 @@
+/* #region BUILT-IN */
+body
+{
+    background-image: url("/kov-downloads/resources/images/background.webp");
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgba(180, 100, 0, 1);
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    user-select: none;
+}
+
+h1
+{
+    margin-bottom: 0px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 1),
+                 1px -1px 0 rgba(0, 0, 0, 1),
+                 -1px 1px 0 rgba(0, 0, 0, 1),
+                 1px 1px 0 rgba(0, 0, 0, 1);
+}
+
+h3
+{
+    margin-top: 0px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 1),
+                 1px -1px 0 rgba(0, 0, 0, 1),
+                 -1px 1px 0 rgba(0, 0, 0, 1),
+                 1px 1px 0 rgba(0, 0, 0, 1);
+}
+
+img
+{
+    pointer-events: none;
+    border-radius: 10px;
+}
+/* #endregion */
+
+/* #region CLASSES */
+.title
+{
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.collection
+{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 1);
+    margin-bottom: 50px;
+}
+.collection h1, h4
+{
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.7),
+                 1px -1px 0 rgba(255, 255, 255, 0.7),
+                 -1px 1px 0 rgba(255, 255, 255, 0.7),
+                 1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+.collection h4
+{
+    font-size: 20pt;
+}
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.download-panel
+{
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    width: fit-content;
+    padding: 10px;
+    margin: 15px;
+}
+.download-panel img
+{
+    margin-bottom: 15px;
+}
+.download-panel h4
+{
+    margin-bottom: 0px;
+}
+
+.download-button
+{
+    background-color: rgba(180, 100, 0, 1);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    color: rgba(255, 255, 255, 1);
+}
+.download-button:hover
+{
+    background-color: rgba(160, 80, 0, 1);
+}
+.download-button:active
+{
+    background-color: rgba(140, 60, 0, 1);
+}
+/* #endregion */
+
+/* #region IDs */
+#others
+{
+    margin-bottom: 0px;
+}
+/* #endregion */
