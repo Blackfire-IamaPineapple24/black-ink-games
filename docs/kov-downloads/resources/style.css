@@ -80,6 +80,8 @@ img
 .download-panel img
 {
     margin-bottom: 15px;
+    max-width: 500px;
+    width: calc(100% - 13px);
 }
 .download-panel h4
 {
