@@ -1,10 +1,9 @@
 User-agent: *
-Disallow:
-GPTBot
-ChatGPT-User
-ClaudeBot
-Google-Extended
-CCBot
-PerplexityBot
-Meta-ExternalAgent
-Bytespider
+Disallow: GPTBot
+Disallow: ChatGPT-User
+Disallow: ClaudeBot
+Disallow: Google-Extended
+Disallow: CCBot
+Disallow: PerplexityBot
+Disallow: Meta-ExternalAgent
+Disallow: Bytespider
