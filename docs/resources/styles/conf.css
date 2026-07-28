@@ -1,0 +1,80 @@
+/* #region ---------- BUILT-IN */
+
+body
+{
+    background-color: rgba(0, 103, 179, 1);
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 1);
+    user-select: none;
+    padding-left: 15px;
+    max-width: calc(100% - 40px);
+}
+
+h1
+{
+    font-weight: 300;
+    font-size: 40pt;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-weight: 300;
+    font-size: 20pt;
+    margin-bottom: 0px;
+}
+
+button
+{
+    background-color: rgba(0, 118, 215, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 0px;
+    border-color: rgba(255, 255, 255, 1);
+    border-width: 2px;
+    border-style: solid;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    width: 64px;
+    height: 32px;
+}
+button:hover
+{
+    background-color: rgba(15, 139, 240, 1);
+}
+button:active
+{
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+}
+
+/* #endregion */
+
+/* #region ---------- IDs */
+
+#desc
+{
+    margin-top: 0px;
+}
+
+/* #endregion */
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px)
+{
+    /* #region ---------- BUILT-IN */
+
+    button:hover
+    {
+        background-color: rgba(0, 118, 215, 1);
+    }
+    button:active
+    {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgba(0, 0, 0, 1);
+    }
+
+    /* #endregion */
+}
